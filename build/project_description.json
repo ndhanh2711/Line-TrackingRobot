@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "LINE-TRACKINGROBOT",
-    "project_version":    "4ee7a46-dirty",
+    "project_version":    "d43170a-dirty",
     "project_path":       "C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot",
     "idf_path":           "C:/Espressif/frameworks/esp-idf-v5.3.1",
     "build_dir":          "C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/build",
