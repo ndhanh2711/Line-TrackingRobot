@@ -1,0 +1,174 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.3.1\examples\get-started\Line-TrackingRobot\build\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.3_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.3.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6880 bytes. 0x780 bytes (7%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+FAILED: esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj 
+ccache C:\Espressif\tools\xtensa-esp-elf\esp-13.2.0_20240530\xtensa-esp-elf\bin\xtensa-esp32-elf-gcc.exe -DESP_PLATFORM -DIDF_VER=\"v5.3.1-dirty\" -DMBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -DUNITY_INCLUDE_CONFIG_H -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -IC:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/build/config -IC:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/newlib/platform_include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/freertos/config/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/freertos/config/include/freertos -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/freertos/config/xtensa/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/freertos/FreeRTOS-Kernel/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/freertos/esp_additions/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_hw_support/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_hw_support/include/soc -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_hw_support/include/soc/esp32 -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_hw_support/dma/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_hw_support/ldo/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_hw_support/port/esp32/. -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_hw_support/port/esp32/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/heap/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/log/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/soc/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/soc/esp32 -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/soc/esp32/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/hal/platform_port/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/hal/esp32/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/hal/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_rom/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_rom/include/esp32 -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_rom/esp32 -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_common/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_system/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_system/port/soc -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_system/port/include/private -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/xtensa/esp32/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/xtensa/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/xtensa/deprecated_include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/lwip/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/lwip/include/apps -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/lwip/include/apps/sntp -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/lwip/lwip/src/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/lwip/port/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/lwip/port/freertos/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/lwip/port/esp32xx/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/lwip/port/esp32xx/include/arch -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/lwip/port/esp32xx/include/sys -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_gpio/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_pm/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/mbedtls/port/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/mbedtls/mbedtls/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/mbedtls/mbedtls/library -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/mbedtls/esp_crt_bundle/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/mbedtls/mbedtls/3rdparty/everest/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/mbedtls/mbedtls/3rdparty/p256-m -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/mbedtls/mbedtls/3rdparty/p256-m/p256-m -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_app_format/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_bootloader_format/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/app_update/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/bootloader_support/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/bootloader_support/bootloader_flash/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_partition/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/efuse/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/efuse/esp32/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_mm/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/spi_flash/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/pthread/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_timer/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_gptimer/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_ringbuf/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_uart/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/vfs/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/app_trace/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_event/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/nvs_flash/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_pcnt/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_spi/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_mcpwm/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_ana_cmpr/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_i2s/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/sdmmc/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_sdmmc/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_sdspi/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_sdio/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_dac/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_rmt/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_tsens/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_sdm/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_i2c/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_ledc/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_parlio/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_usb_serial_jtag/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/driver/deprecated -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/driver/i2c/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/driver/touch_sensor/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/driver/twai/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/driver/touch_sensor/esp32/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_phy/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_phy/esp32/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_vfs_console/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_netif/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/wpa_supplicant/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/wpa_supplicant/port/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/wpa_supplicant/esp_supplicant/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_coex/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_wifi/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_wifi/wifi_apps/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_wifi/wifi_apps/nan_app/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_wifi/include/local -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/unity/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/unity/unity/src -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/cmock/CMock/src -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/console -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/http_parser -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp-tls -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp-tls/esp-tls-crypto -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_adc/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_adc/interface -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_adc/esp32/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_adc/deprecated/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_isp/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_cam/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_cam/interface -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_jpeg/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_ppa/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_eth/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_gdbstub/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_hid/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/tcp_transport/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_http_client/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_http_server/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_https_ota/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_https_server/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_psram/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_lcd/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_lcd/interface -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/protobuf-c/protobuf-c -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/protocomm/include/common -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/protocomm/include/security -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/protocomm/include/transports -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/protocomm/include/crypto/srp6a -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/protocomm/proto-c -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_local_ctrl/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/espcoredump/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/espcoredump/include/port/xtensa -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/wear_levelling/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/fatfs/diskio -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/fatfs/src -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/fatfs/vfs -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/idf_test/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/idf_test/include/esp32 -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/ieee802154/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/json/cJSON -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/mqtt/esp-mqtt/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/nvs_sec_provider/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/perfmon/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/spiffs/include -IC:/Espressif/frameworks/esp-idf-v5.3.1/components/wifi_provisioning/include -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap -fmacro-prefix-map=C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot=. -fmacro-prefix-map=C:/Espressif/frameworks/esp-idf-v5.3.1=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj -MF esp-idf\main\CMakeFiles\__idf_main.dir\main.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj -c C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c
+In file included from C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:4:
+C:/Espressif/frameworks/esp-idf-v5.3.1/components/driver/deprecated/driver/adc.h:19:2: warning: #warning "legacy adc driver is deprecated, please migrate to use esp_adc/adc_oneshot.h and esp_adc/adc_continuous.h for oneshot mode and continuous mode drivers respectively" [-Wcpp]
+   19 | #warning "legacy adc driver is deprecated, please migrate to use esp_adc/adc_oneshot.h and esp_adc/adc_continuous.h for oneshot mode and continuous mode drivers respectively"
+      |  ^~~~~~~
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:14:8: error: unknown type name 'adc_oneshot_unit_handle_t'
+   14 | static adc_oneshot_unit_handle_t adc1_handle;
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c: In function 'init_adc':
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:19:5: error: unknown type name 'adc_oneshot_unit_init_cfg_t'
+   19 |     adc_oneshot_unit_init_cfg_t adc1_config = {
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:20:9: error: field name not in record or union initializer
+   20 |         .unit_id = ADC_UNIT_1,
+      |         ^
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:20:9: note: (near initialization for 'adc1_config')
+In file included from C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_hw_support/include/esp_intr_alloc.h:12,
+                 from C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_hw_support/include/esp_cpu.h:20,
+                 from C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_hw_support/include/spinlock.h:11,
+                 from C:/Espressif/frameworks/esp-idf-v5.3.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:49,
+                 from C:/Espressif/frameworks/esp-idf-v5.3.1/components/freertos/FreeRTOS-Kernel/include/freertos/portable.h:57,
+                 from C:/Espressif/frameworks/esp-idf-v5.3.1/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h:69,
+                 from C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:2:
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:22:21: error: implicit declaration of function 'adc_oneshot_new_unit' [-Werror=implicit-function-declaration]
+   22 |     ESP_ERROR_CHECK(adc_oneshot_new_unit(&adc1_config, &adc1_handle));
+      |                     ^~~~~~~~~~~~~~~~~~~~
+C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:25:9: error: unknown type name 'adc_oneshot_chan_cfg_t'; did you mean 'adc_oneshot_clk_src_t'?
+   25 |         adc_oneshot_chan_cfg_t channel_config = {
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+      |         adc_oneshot_clk_src_t
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:26:13: error: field name not in record or union initializer
+   26 |             .bitwidth = ADC_BITWIDTH_DEFAULT,
+      |             ^
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:26:13: note: (near initialization for 'channel_config')
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:27:13: error: field name not in record or union initializer
+   27 |             .atten = ADC_ATTEN_DB_12, // Cập nhật để tránh sử dụng giá trị deprecated
+      |             ^
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:27:13: note: (near initialization for 'channel_config')
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:27:22: warning: excess elements in scalar initializer
+   27 |             .atten = ADC_ATTEN_DB_12, // Cập nhật để tránh sử dụng giá trị deprecated
+      |                      ^~~~~~~~~~~~~~~
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:27:22: note: (near initialization for 'channel_config')
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:29:25: error: implicit declaration of function 'adc_oneshot_config_channel' [-Werror=implicit-function-declaration]
+   29 |         ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_handle, adc_pins[i], &channel_config));
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c: In function 'init_pwm':
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:44:5: error: unknown type name 'mcpwm_operator_handle_t'; did you mean 'mcpwm_oper_handle_t'?
+   44 |     mcpwm_operator_handle_t pwm_oper;
+      |     ^~~~~~~~~~~~~~~~~~~~~~~
+      |     mcpwm_oper_handle_t
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:48:58: warning: passing argument 2 of 'mcpwm_new_operator' from incompatible pointer type [-Wincompatible-pointer-types]
+   48 |     ESP_ERROR_CHECK(mcpwm_new_operator(&operator_config, &pwm_oper));
+      |                                                          ^~~~~~~~~
+      |                                                          |
+      |                                                          int *
+C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+In file included from C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_mcpwm/include/driver/mcpwm_prelude.h:15,
+                 from C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:5:
+C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_mcpwm/include/driver/mcpwm_oper.h:47:90: note: expected 'struct mcpwm_oper_t **' but argument is of type 'int *'
+   47 | esp_err_t mcpwm_new_operator(const mcpwm_operator_config_t *config, mcpwm_oper_handle_t *ret_oper);
+      |                                                                     ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:50:50: warning: passing argument 1 of 'mcpwm_operator_connect_timer' makes pointer from integer without a cast [-Wint-conversion]
+   50 |     ESP_ERROR_CHECK(mcpwm_operator_connect_timer(pwm_oper, pwm_timer));
+      |                                                  ^~~~~~~~
+      |                                                  |
+      |                                                  int
+C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_mcpwm/include/driver/mcpwm_oper.h:70:60: note: expected 'mcpwm_oper_handle_t' {aka 'struct mcpwm_oper_t *'} but argument is of type 'int'
+   70 | esp_err_t mcpwm_operator_connect_timer(mcpwm_oper_handle_t oper, mcpwm_timer_handle_t timer);
+      |                                        ~~~~~~~~~~~~~~~~~~~~^~~~
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:55:41: warning: passing argument 1 of 'mcpwm_new_generator' makes pointer from integer without a cast [-Wint-conversion]
+   55 |     ESP_ERROR_CHECK(mcpwm_new_generator(pwm_oper, &gen_left_config, &pwm_left_gen));
+      |                                         ^~~~~~~~
+      |                                         |
+      |                                         int
+C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+In file included from C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_mcpwm/include/driver/mcpwm_prelude.h:17:
+C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_mcpwm/include/driver/mcpwm_gen.h:46:51: note: expected 'mcpwm_oper_handle_t' {aka 'struct mcpwm_oper_t *'} but argument is of type 'int'
+   46 | esp_err_t mcpwm_new_generator(mcpwm_oper_handle_t oper, const mcpwm_generator_config_t *config, mcpwm_gen_handle_t *ret_gen);
+      |                               ~~~~~~~~~~~~~~~~~~~~^~~~
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:60:41: warning: passing argument 1 of 'mcpwm_new_generator' makes pointer from integer without a cast [-Wint-conversion]
+   60 |     ESP_ERROR_CHECK(mcpwm_new_generator(pwm_oper, &gen_right_config, &pwm_right_gen));
+      |                                         ^~~~~~~~
+      |                                         |
+      |                                         int
+C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_mcpwm/include/driver/mcpwm_gen.h:46:51: note: expected 'mcpwm_oper_handle_t' {aka 'struct mcpwm_oper_t *'} but argument is of type 'int'
+   46 | esp_err_t mcpwm_new_generator(mcpwm_oper_handle_t oper, const mcpwm_generator_config_t *config, mcpwm_gen_handle_t *ret_gen);
+      |                               ~~~~~~~~~~~~~~~~~~~~^~~~
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c: In function 'set_pwm_duty':
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:66:20: error: incompatible type for argument 2 of 'mcpwm_generator_set_action_on_timer_event'
+   66 |         generator, MCPWM_TIMER_DIRECTION_UP, MCPWM_TIMER_EVENT_EMPTY,
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                    |
+      |                    int
+C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_mcpwm/include/driver/mcpwm_gen.h:105:108: note: expected 'mcpwm_gen_timer_event_action_t' but argument is of type 'int'
+  105 | esp_err_t mcpwm_generator_set_action_on_timer_event(mcpwm_gen_handle_t gen, mcpwm_gen_timer_event_action_t ev_act);
+      |                                                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:65:21: error: too many arguments to function 'mcpwm_generator_set_action_on_timer_event'
+   65 |     ESP_ERROR_CHECK(mcpwm_generator_set_action_on_timer_event(
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_mcpwm/include/driver/mcpwm_gen.h:105:11: note: declared here
+  105 | esp_err_t mcpwm_generator_set_action_on_timer_event(mcpwm_gen_handle_t gen, mcpwm_gen_timer_event_action_t ev_act);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:69:20: error: incompatible type for argument 2 of 'mcpwm_generator_set_action_on_timer_event'
+   69 |         generator, MCPWM_TIMER_DIRECTION_UP, MCPWM_TIMER_EVENT_FULL,
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                    |
+      |                    int
+C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_mcpwm/include/driver/mcpwm_gen.h:105:108: note: expected 'mcpwm_gen_timer_event_action_t' but argument is of type 'int'
+  105 | esp_err_t mcpwm_generator_set_action_on_timer_event(mcpwm_gen_handle_t gen, mcpwm_gen_timer_event_action_t ev_act);
+      |                                                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:68:21: error: too many arguments to function 'mcpwm_generator_set_action_on_timer_event'
+   68 |     ESP_ERROR_CHECK(mcpwm_generator_set_action_on_timer_event(
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_mcpwm/include/driver/mcpwm_gen.h:105:11: note: declared here
+  105 | esp_err_t mcpwm_generator_set_action_on_timer_event(mcpwm_gen_handle_t gen, mcpwm_gen_timer_event_action_t ev_act);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:64:14: warning: unused variable 'duty_ticks' [-Wunused-variable]
+   64 |     uint32_t duty_ticks = duty_percent * 200;
+      |              ^~~~~~~~~~
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c: In function 'track_line':
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:76:25: error: implicit declaration of function 'adc_oneshot_read' [-Werror=implicit-function-declaration]
+   76 |         ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, adc_pins[0], &sensor_value));
+      |                         ^~~~~~~~~~~~~~~~
+C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c: In function 'app_main':
+C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main/main.c:93:17: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [-Wincompatible-pointer-types]
+   93 |     xTaskCreate(track_line, "track_line", 2048, NULL, 5, NULL);
+      |                 ^~~~~~~~~~
+      |                 |
+      |                 void (*)(void)
+In file included from C:/Espressif/frameworks/esp-idf-v5.3.1/components/freertos/esp_additions/include/freertos/idf_additions.h:20,
+                 from C:/Espressif/frameworks/esp-idf-v5.3.1/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h:1533:
+C:/Espressif/frameworks/esp-idf-v5.3.1/components/freertos/FreeRTOS-Kernel/include/freertos/task.h:371:44: note: expected 'TaskFunction_t' {aka 'void (*)(void *)'} but argument is of type 'void (*)(void)'
+  371 |     BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
+      |                             ~~~~~~~~~~~~~~~^~~~~~~~~~
+cc1.exe: some warnings being treated as errors
+ninja: build stopped: subcommand failed.

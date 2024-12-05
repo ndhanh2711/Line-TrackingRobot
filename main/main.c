@@ -1,75 +1,38 @@
-#include <stdio.h>
+ #include <stdio.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "driver/ledc.h"
-#include "esp_err.h"
+#include "driver/adc.h"
+#include "esp_adc_cal.h"
 
-// GPIO định nghĩa cho PWM
-#define PWM_GPIO_1 4
-#define PWM_GPIO_2 15
+// Cấu hình ADC
+#define ADC_CHANNEL ADC_CHANNEL_6  // GPIO34 -> ADC1 Channel 6
+#define ADC_WIDTH   ADC_WIDTH_BIT_12 // Độ phân giải 12-bit (0 - 4095)
+#define ADC_ATTEN   ADC_ATTEN_DB_0   // Không giảm điện áp (0-1.1V)
+#define DEFAULT_VREF 1100           // Điện áp tham chiếu mặc định (mV)
 
-// Tần số và độ phân giải PWM
-#define PWM_FREQ_HZ 1000       // 1 kHz
-#define PWM_RESOLUTION LEDC_TIMER_10_BIT // Độ phân giải 10 bit
-#define PWM_DUTY_MAX 1023      // Duty cycle 100% (2^10 - 1)
+// Hàm hiệu chuẩn ADC
+static esp_adc_cal_characteristics_t *adc_chars;
+
+// Hàm khởi tạo ADC
+void init_adc() {
+    adc1_config_width(ADC_WIDTH);
+    adc1_config_channel_atten(ADC_CHANNEL, ADC_ATTEN);
+    adc_chars = calloc(1, sizeof(esp_adc_cal_characteristics_t));
+    esp_adc_cal_characterize(ADC_UNIT_1, ADC_ATTEN, ADC_WIDTH, DEFAULT_VREF, adc_chars);
+}
+
+// Hàm đọc giá trị ADC và chuyển sang điện áp
+uint32_t read_adc_voltage() {
+    int adc_raw = adc1_get_raw(ADC_CHANNEL); // Đọc giá trị ADC
+    uint32_t voltage = esp_adc_cal_raw_to_voltage(adc_raw, adc_chars); // Chuyển đổi sang mV
+    return voltage;
+}
 
 void app_main(void) {
-    // 1. Cấu hình LEDC timer
-    ledc_timer_config_t ledc_timer = {
-        .speed_mode = LEDC_LOW_SPEED_MODE,
-        .timer_num = LEDC_TIMER_0,
-        .duty_resolution = PWM_RESOLUTION,
-        .freq_hz = PWM_FREQ_HZ,
-        .clk_cfg = LEDC_AUTO_CLK
-    };
-    ledc_timer_config(&ledc_timer);
-
-    // 2. Cấu hình kênh PWM cho GPIO 4
-    ledc_channel_config_t ledc_channel1 = {
-        .gpio_num = PWM_GPIO_1,
-        .speed_mode = LEDC_LOW_SPEED_MODE,
-        .channel = LEDC_CHANNEL_0,
-        .timer_sel = LEDC_TIMER_0,
-        .duty = 0, // Ban đầu duty cycle = 0
-        .hpoint = 0
-    };
-    ledc_channel_config(&ledc_channel1);
-
-    // 3. Cấu hình kênh PWM cho GPIO 15
-    ledc_channel_config_t ledc_channel2 = {
-        .gpio_num = PWM_GPIO_2,
-        .speed_mode = LEDC_LOW_SPEED_MODE,
-        .channel = LEDC_CHANNEL_1,
-        .timer_sel = LEDC_TIMER_0,
-        .duty = 0, // Ban đầu duty cycle = 0
-        .hpoint = 0
-    };
-    ledc_channel_config(&ledc_channel2);
-
-    // Vòng lặp điều khiển PWM
+    init_adc(); // Khởi tạo ADC
     while (1) {
-        // Bật PWM trên GPIO 4
-        printf("PWM ON GPIO 4\n");
-        ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0, PWM_DUTY_MAX); // Duty 100%
-        ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0);
-        vTaskDelay(pdMS_TO_TICKS(5000)); // Chạy trong 5 giây
-
-        // Tắt PWM trên GPIO 4
-        printf("PWM OFF GPIO 4\n");
-        ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0, 0); // Duty 0%
-        ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0);
-        vTaskDelay(pdMS_TO_TICKS(2000)); // Nghỉ 2 giây
-
-        // Bật PWM trên GPIO 15
-        printf("PWM ON GPIO 15\n");
-        ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_1, PWM_DUTY_MAX); // Duty 100%
-        ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_1);
-        vTaskDelay(pdMS_TO_TICKS(5000)); // Chạy trong 5 giây
-
-        // Tắt PWM trên GPIO 15
-        printf("PWM OFF GPIO 15\n");
-        ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_1, 0); // Duty 0%
-        ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_1);
-        vTaskDelay(pdMS_TO_TICKS(2000)); // Nghỉ 2 giây
+        uint32_t voltage = read_adc_voltage(); // Đọc điện áp từ quang trở
+        printf("Voltage: %d mV\n", voltage); // Hiển thị giá trị điện áp
+        vTaskDelay(pdMS_TO_TICKS(1000)); // Đợi 1 giây
     }
 }
