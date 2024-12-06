@@ -60,3 +60,27 @@
 ![Hàn linh kiện 2](image-3.png)
 ![Hàn linh kiện 3](image-4.png)
 ![Hàn linh kiện 4](image-5.png)
+# Quy trình thực hiện code
+## 1 Calib ADC 
+- Đọc giá trị của 8 quang trở sao cho trong cùng một môi trường, các giá trị không quá lệch nhau
+- -> Từ đó xác định ngưỡng phân biệt giữa Line và Road
+## 2 Giảm Duty Cycle -> Giảm tốc độ dộng cơ, tính toán sai số
+- Error = Target - Pos
+Speed_Left = Base_Speed - PWM
+Speed_Right = Base_Speed + PWM
+Base_Speed : Tốc độ set ban đầu
+
+- Nếu Error > 0, bánh phải quay nhanh hơn để rẽ phải.
+
+- Nếu Error < 0, bánh trái quay nhanh hơn để rẽ trái
+## 3 Mất line
+- Xoay một bánh để tìm line
+## 4 Thử nghiệm các thông số Ki, Kp, Kd -> Rút ra thông số tối ưu nhất
+- PID -> PWM -> Loop
+Điều chỉnh thông số PID
+Ban đầu, đặt 
+- 𝐾p lớn để phản ứng nhanh với sai số.
+Sau đó, tăng dần 
+- 𝐾i để giảm sai số tích lũy (nếu robot không ổn định).
+Sử dụng 
+- 𝐾d để làm giảm dao động (overshoot).
