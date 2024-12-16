@@ -1,86 +1,84 @@
 # Line-Tracking Robot
 
-## Danh mục hình ảnh quy trình thực hiện
+## Process Image Catalog
 
-### 1. Vẽ mạch dò line và mạch MCU bằng Altium
+### 1. Design Line Sensor Circuit and MCU Circuit with Altium
 
-#### Các linh kiện trong mạch dò line:
-1. Điện trở 220 Ohm (8)
-2. Quang trở (8)
-3. LED trắng (16)  
-   - Chức năng: Soi mặt phẳng xe chạy để quang trở tăng khả năng phân biệt màu sắc của line so với mặt đường.
-4. Header 10pins (1)
-5. Trở băng 10k (1)
+#### Components in the Line Sensor Circuit:
+1. Resistors 220 Ohm (8)
+2. Photoresistors (8)
+3. White LEDs (16)  
+   - **Function**: Illuminate the surface to enhance the photoresistors' ability to differentiate the line color from the road.
+4. 10-pin Header (1)
+5. 10k Resistor Network (1)
 
-![Mạch dò line](image-10.png)
+![Line Sensor Circuit](image-10.png)
 
-#### Các linh kiện trong mạch MCU:
+#### Components in the MCU Circuit:
 1. ESP32 DEV KIT V1 (1)
-2. Header 2pins (3)
-3. Tụ điện:  
+2. 2-pin Headers (3)
+3. Capacitors:  
    - 100nF (1)  
    - 300nF (1)
 4. LM7805 (1)  
-   - Chức năng: IC ổn áp, đảm bảo nguồn điện cấp cho toàn mạch ở mức 5V.
-5. MOSFET (2)  
-   - Chức năng: Điều khiển 2 bánh xe của robot.
-6. Điện trở:  
+   - **Function**: Voltage regulator to ensure a stable 5V power supply for the entire circuit.
+5. MOSFETs (2)  
+   - **Function**: Control the two wheels of the robot.
+6. Resistors:  
    - 1k  
    - 10k  
    - 150k
-7. Diode  
-   - Chức năng: Ngăn dòng cảm ứng khi động cơ ngắt đột ngột gây ra có thể làm hỏng MOSFET.
-8. Header 10pins (1)
+7. Diodes  
+   - **Function**: Prevent back EMF from damaging the MOSFET when the motor suddenly stops.
+8. 10-pin Header (1)
 
-![Mạch MCU](image-11.png)
-
----
-
-### 2. Sơ đồ đi dây của 2 mạch
-
-![Sơ đồ đi dây 1](image-12.png)
-![Sơ đồ đi dây 2](image-13.png)
+![MCU Circuit](image-11.png)
 
 ---
 
-### 3. Quá trình ăn mòn phíp đồng bằng muối ăn mòn chuyên dụng
+### 2. Wiring Diagrams of Both Circuits
+
+![Wiring Diagram 1](image-12.png)  
+![Wiring Diagram 2](image-13.png)
+
+---
+
+### 3. Etching Copper PCB Using Specialized Etching Salt
 
 - **Tips:**  
-  - Dây đồng bị mờ sau khi in lên phíp đồng có thể dùng bút lông tô lại.  
-  - Dùng nước nóng sẽ giúp quá trình ăn mòn diễn ra nhanh hơn và dây đồng đẹp hơn.
+  - If the copper traces fade after printing on the PCB, you can redraw them with a marker.  
+  - Using hot water accelerates the etching process and results in cleaner traces.
 
-![Quá trình ăn mòn 1](image-14.png)
-![Quá trình ăn mòn 2](image-1.png)
+![Etching Process 1](image-14.png)  
+![Etching Process 2](image-1.png)
 
 ---
 
-### 4. Hàn linh kiện lên mạch
+### 4. Soldering Components onto the Circuit
 
-![Hàn linh kiện 1](image-2.png)
-![Hàn linh kiện 2](image-3.png)
-![Hàn linh kiện 3](image-4.png)
-![Hàn linh kiện 4](image-5.png)
-# Quy trình thực hiện code
-## 1 Calib ADC 
-- Đọc giá trị của 8 quang trở sao cho trong cùng một môi trường, các giá trị không quá lệch nhau
-- -> Từ đó xác định ngưỡng phân biệt giữa Line và Road
-## 2 Giảm Duty Cycle -> Giảm tốc độ dộng cơ, tính toán sai số
-- Error = Target - Pos
-Speed_Left = Base_Speed - PWM
-Speed_Right = Base_Speed + PWM
-Base_Speed : Tốc độ set ban đầu
+![Soldering Process 1](image-2.png)  
+![Soldering Process 2](image-3.png)  
+![Soldering Process 3](image-4.png)  
+![Soldering Process 4](image-5.png)
 
-- Nếu Error > 0, bánh phải quay nhanh hơn để rẽ phải.
+---
 
-- Nếu Error < 0, bánh trái quay nhanh hơn để rẽ trái
-## 3 Mất line
-- Xoay một bánh để tìm line
-## 4 Thử nghiệm các thông số Ki, Kp, Kd -> Rút ra thông số tối ưu nhất
+# Coding Workflow
+
+## 1. Calibrate ADC 
+- Read the values from the 8 photoresistors, ensuring they are consistent in the same environment.  
+- -> Determine the threshold for distinguishing between the line and the road.
+
+## 2. Reduce Duty Cycle -> Slow Down the Motor and Calculate the Error
+- `Error = Target - Pos`  
+- If `Error > 0`, the right wheel should spin faster to turn right.  
+- If `Error < 0`, the left wheel should spin faster to turn left.
+
+## 3. Handle Line Loss
+- Rotate one wheel to locate the line.
+
+## 4. Tune Ki, Kp, Kd Parameters -> Determine the Optimal Values
 - PID -> PWM -> Loop
-Điều chỉnh thông số PID
-Ban đầu, đặt 
-- 𝐾p lớn để phản ứng nhanh với sai số.
-Sau đó, tăng dần 
-- 𝐾i để giảm sai số tích lũy (nếu robot không ổn định).
-Sử dụng 
-- 𝐾d để làm giảm dao động (overshoot).
+- Initially, set a high **𝐾p** for quick error response.
+- Gradually increase **𝐾i** to reduce accumulated error (if the robot becomes unstable).
+- Use **𝐾d** to minimize overshoot and oscillations.
