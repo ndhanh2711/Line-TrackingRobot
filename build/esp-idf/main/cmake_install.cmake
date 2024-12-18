@@ -1,4 +1,4 @@
-# Install script for directory: C:/Espressif/frameworks/esp-idf-v5.3.1/examples/get-started/Line-TrackingRobot/main
+# Install script for directory: C:/Espressif/frameworks/Line-TrackingRobot/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
